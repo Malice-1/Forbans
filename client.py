@@ -29,10 +29,10 @@ except socket.timeout:
 
 pygame.init()
 WIDTH,HEIGHT=800,600
-pygame.display.set_mode((WIDTH, HEIGHT))
-window=pygame.display.set_caption("Forbans")
+window=pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Forbans")
 
-WHITE=(255,255,255)
+BLACK=(0,0,0)
 BLUE=(0,0,255)
 
 
@@ -44,9 +44,9 @@ while running:
         if event.type==pygame.QUIT:
             running=False
 
-    window.fill(WHITE)
-    pygame.draw.rect(window, BLUE, (p1.pos_x, p1.pos_y, p1.s1.size, p1.s1.size))
-    pygame.draw.rect(window, BLUE, (p1.pos_x, p1.pos_y, p1.s1.size, p1.s1.size))
+    window.fill(BLACK)
+    pygame.draw.rect(window, BLUE, (p1.pos_x, p1.pos_y, p1.active_ship.size, p1.active_ship.size))
+    pygame.draw.rect(window, BLUE, (p2.pos_x, p2.pos_y, p2.active_ship.size, p2.active_ship.size))
 
     pygame.display.update()
 
